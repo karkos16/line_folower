@@ -42,8 +42,9 @@ void setupPWMandMOTORS() {
 			(1 << PB2) );
 
 //	Motors always enable
-	PORTD |= (1 << LEFT_MOTOR_FORWARD);
-	PORTD |= (1 << RIGHT_MOTOR_FORWARD);
+	PORTD |= (
+				(1 << LEFT_MOTOR_FORWARD) |
+				(1 << RIGHT_MOTOR_FORWARD));
 
 //	Setting PWM on Timer/Counter 1 in 8bit mode
 	TCCR1A |= (1 << WGM10) |
@@ -116,9 +117,7 @@ int main(void)
 
 //	   Turn on led if black wasn't detected
 	   if (sensors != 0b1111) {
-	   	PORTD &= (0 << PD0);
-	    PORTD |= (1 << LEFT_MOTOR_FORWARD);
-		PORTD |= (1 << RIGHT_MOTOR_FORWARD);
+	   	PORTD &= ~(1 << PD0);
 	   } else PORTD |= (1 << PD0);
 
 	   controlMotors(sensors);
