@@ -3,26 +3,93 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
+#include <stdbool.h>
 
-#define SENSOR1 PC0
-#define SENSOR2 PC1
+#define SENSOR1 PC1
+#define SENSOR2 PC0
 #define SENSOR3 PC2
 #define SENSOR4 PC3
 
 #define LED PD0
-#define LEFT_MOTOR_FORWARD PD4
-#define LEFT_MOTOR_BACKWARD PD5
+#define LEFT_MOTOR_FORWARD PD5
+#define LEFT_MOTOR_BACKWARD PD4
 #define LEFT_MOTOR_SPEED OCR1B
 #define RIGHT_MOTOR_SPEED OCR1A
 #define RIGHT_MOTOR_FORWARD PD6
 #define RIGHT_MOTOR_BACKWARD PD7
 // Checking sensors, 1 means that sensor didn't detect black
+
+void setupSensors() {
+	ADCSRA |= (
+				(1 << ADEN) //Enable ADC
+	);
+
+	ADMUX |= (
+				(1 << REFS0)
+	); // Set ADC Reference as Vcc
+
+	ADCSRA |= (
+				(1 << ADPS0) |
+				(1 << ADPS1) |
+				(1 << ADPS2)
+	); // Prescaler 128;
+
+	ADMUX &= ~((1 << MUX3) | (1 << MUX2) | (1 << MUX1) | (1 << MUX0)); // Set bits MUX3:0 to zero
+
+}
+
+bool leftEdgeSensor() {
+	ADMUX &= ~((1 << MUX3) | (1 << MUX2) | (1 << MUX1) | (1 << MUX0));
+	ADMUX |= (1 << MUX0); // Set PC1 for ADC input
+	ADCSRA |= (1<<ADSC); // Start conversion
+	while (ADCSRA & (1 << ADSC)) {
+		// wait for result
+	}
+	if (ADC > 300) return true;
+	return false;
+}
+
+bool leftSensor() {
+	ADMUX &= ~((1 << MUX3) | (1 << MUX2) | (1 << MUX1) | (1 << MUX0)); // Set PC0 for ADC input
+	ADCSRA |= (1<<ADSC); // Start conversion
+	while (ADCSRA & (1 << ADSC)) {
+		// wait for result
+	}
+	if (ADC > 300) return true;
+	return false;
+}
+
+bool rightEdgeSensor() {
+	ADMUX &= ~((1 << MUX3) | (1 << MUX2) | (1 << MUX1) | (1 << MUX0));
+	ADMUX |= ( (1 << MUX1) | (1 << MUX0) );// Set PC3 for ADC input
+	ADCSRA |= (1<<ADSC); // Start conversion
+	while (ADCSRA & (1 << ADSC)) {
+		// wait for result
+	}
+	if (ADC > 300) return true;
+	return false;
+}
+
+bool rightSensor() {
+	ADMUX &= ~((1 << MUX3) | (1 << MUX2) | (1 << MUX1) | (1 << MUX0));
+	ADMUX |= (1 << MUX1);// Set PC2 for ADC input
+	ADCSRA |= (1<<ADSC); // Start conversion
+	while (ADCSRA & (1 << ADSC)) {
+		// wait for result
+	}
+	if (ADC > 300) return true;
+	return false;
+}
+
+
 uint8_t readSensors() {
 	uint8_t sensors_values = 0b0000;
-	if (bit_is_clear(PINC, SENSOR1)) sensors_values |= 1<<3;
-	if (bit_is_clear(PINC, SENSOR2)) sensors_values |= 1<<2;
-	if (bit_is_clear(PINC, SENSOR3)) sensors_values |= 1<<1;
-	if (bit_is_clear(PINC, SENSOR4)) sensors_values |= 1<<0;
+
+	if(leftEdgeSensor()) sensors_values |= (1 << 3);
+	if(leftSensor()) sensors_values |= (1 << 2);
+	if(rightSensor()) sensors_values |= (1 << 1);
+	if(rightEdgeSensor()) sensors_values |= (1 << 0);
+
 	return sensors_values;
 }
 
@@ -56,15 +123,35 @@ void setupPWMandMOTORS() {
 	sei();
 }
 
-void setupSensors() {
-//	Setting pins C0-3 as inputs
-	DDRC &= ~(  (1 << SENSOR1) |
-				(1 << SENSOR2) |
-				(1 << SENSOR3) |
-				(1 << SENSOR4) );
+void forward() {
+	PORTD &= ~(
+			(1 << LEFT_MOTOR_BACKWARD) |
+			(1 << RIGHT_MOTOR_BACKWARD)
+			);
+	PORTD |= (
+			(1 << LEFT_MOTOR_FORWARD) |
+			(1 << RIGHT_MOTOR_FORWARD)
+			);
 }
 
-void controlMotors(uint8_t sensorsBits) {
+void left() {
+	PORTD &= ~(1 << LEFT_MOTOR_FORWARD);
+	PORTD |= (
+			(1 << LEFT_MOTOR_BACKWARD) |
+			(1 << RIGHT_MOTOR_FORWARD)
+			);
+}
+
+void right() {
+	PORTD &= ~(1 << RIGHT_MOTOR_FORWARD);
+	PORTD |= (
+			(1 << LEFT_MOTOR_FORWARD) |
+			(1 << RIGHT_MOTOR_BACKWARD)
+			);
+}
+
+
+int controlMotors(uint8_t sensorsBits) {
 	unsigned char pelnaPIZDA = 255;
 	unsigned char sredniaPIZDA = 128;
 	unsigned char malaPIZDA = 64;
@@ -72,36 +159,54 @@ void controlMotors(uint8_t sensorsBits) {
 
 //  No black - full speed
 	if (sensorsBits == 0b1111) {
+		forward();
 		RIGHT_MOTOR_SPEED = pelnaPIZDA;
 		LEFT_MOTOR_SPEED = pelnaPIZDA;
 	}
 //	Black on right edge sensor - right motor 1/4 of max speed
-	if (sensorsBits == 0b1110 || sensorsBits == 0b1100) {
-		RIGHT_MOTOR_SPEED = malaPIZDA;
+	else if (sensorsBits == 0b1110) {
+		right();
+		RIGHT_MOTOR_SPEED = sredniaPIZDA;
+		LEFT_MOTOR_SPEED = pelnaPIZDA;
+	}
+	else if (sensorsBits == 0b1100) {
+		right();
+		RIGHT_MOTOR_SPEED = sredniaPIZDA;
 		LEFT_MOTOR_SPEED = pelnaPIZDA;
 	}
 //	Black on middle right sensor - right motor 1/2 of max speed
-	if (sensorsBits == 0b1101) {
+	else if (sensorsBits == 0b1101) {
+		forward();
 		RIGHT_MOTOR_SPEED = sredniaPIZDA;
 		LEFT_MOTOR_SPEED = pelnaPIZDA;
 	}
 //	Black on left edge sensor - left motor 1/4 of max speed
-	if (sensorsBits == 0b0111 || sensorsBits == 0b0011) {
+	else if (sensorsBits == 0b0111) {
+		left();
 		RIGHT_MOTOR_SPEED = pelnaPIZDA;
-		LEFT_MOTOR_SPEED = malaPIZDA;
+		LEFT_MOTOR_SPEED = sredniaPIZDA;
+	}
+	else if (sensorsBits == 0b0011) {
+		left();
+		RIGHT_MOTOR_SPEED = pelnaPIZDA;
+		LEFT_MOTOR_SPEED = sredniaPIZDA;
 	}
 //	Black in left sensor - left motor 1/2 of max speed
-	if (sensorsBits == 0b1011) {
+	else if (sensorsBits == 0b1011) {
+		forward();
 		RIGHT_MOTOR_SPEED = pelnaPIZDA;
 		LEFT_MOTOR_SPEED = sredniaPIZDA;
 	}
 //	Black on all sensors - STOP
-	if (sensorsBits == 0b0000) {
+	else if (sensorsBits == 0b0000) {
+		forward();
 		RIGHT_MOTOR_SPEED = stopPIZDA;
 		LEFT_MOTOR_SPEED = stopPIZDA;
+		return 1;
 		//sprawdzenie czy to nie skrzyżowanie
-	}
 
+	}
+	return 0;
 }
 
 
@@ -116,9 +221,9 @@ int main(void)
 	   uint8_t sensors = readSensors();
 
 //	   Turn on led if black wasn't detected
-	   if (sensors != 0b1111) {
-	   	PORTD &= ~(1 << PD0);
-	   } else PORTD |= (1 << PD0);
+	  if (sensors != 0b1111) {
+		  PORTD &= ~(1 << PD0);
+	  } else PORTD |= (1 << PD0);
 
 	   controlMotors(sensors);
 	   _delay_ms(6);

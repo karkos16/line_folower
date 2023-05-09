@@ -1,12 +1,12 @@
-22:34:15 **** Build of configuration Release for project dioda_blink ****
+12:45:09 **** Incremental Build of configuration Release for project dioda_blink ****
 make all 
 'Building file: ../main.c'
 'Invoking: AVR Compiler'
-avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega88p -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
-../main.c:1:0: warning: "F_CPU" redefined
- #define F_CPU 16000000UL
- ^
-<command-line>:0:0: note: this is the location of the previous definition
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega88p -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'controlMotors':
+../main.c:157:16: warning: unused variable 'malaPIZDA' [-Wunused-variable]
+  unsigned char malaPIZDA = 64;
+                ^
 'Finished building: ../main.c'
 ' '
 'Building target: dioda_blink.elf'
@@ -32,7 +32,7 @@ AVR Memory Usage
 ----------------
 Device: atmega88p
 
-Program:     134 bytes (1.6% Full)
+Program:     610 bytes (7.4% Full)
 (.text + .data + .bootloader)
 
 Data:          0 bytes (0.0% Full)

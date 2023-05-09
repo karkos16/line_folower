@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?scdStore version="2"?><scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
-        
+            
+    
     <instance id="de.innot.avreclipse.configuration.app.release.1727226266;de.innot.avreclipse.configuration.app.release.1727226266.;de.innot.avreclipse.tool.compiler.winavr.app.release.1709524287;de.innot.avreclipse.compiler.winavr.input.450810179">
-                
+                        
+        
         <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
             <includePath path="c:\users\karko\onedrive\dokumenty\mkclipse\avr toolchain\bin\../lib/gcc/avr/5.4.0/include"/>
             <includePath path="c:\users\karko\onedrive\dokumenty\mkclipse\avr toolchain\bin\../lib/gcc/avr/5.4.0/include-fixed"/>
@@ -442,7 +444,9 @@
             <definedSymbol symbol="__AVR_DEVICE_NAME__=atmega88p"/>
             <definedSymbol symbol="F_CPU=16000000UL"/>
         </collector>
-            
-    </instance>
+                    
     
+    </instance>
+        
+
 </scannerInfo>
