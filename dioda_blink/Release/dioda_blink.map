@@ -117,7 +117,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x262
+.text           0x00000000      0x2e8
  *(.vectors)
  .vectors       0x00000000       0x34 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4/crtatmega88p.o
                 0x00000000                __vector_default
@@ -223,34 +223,34 @@ END GROUP
                 0x0000016c                setupPWMandMOTORS
  .text.forward  0x00000196        0xe ./main.o
                 0x00000196                forward
- .text.left     0x000001a4        0xa ./main.o
+ .text.left     0x000001a4        0xe ./main.o
                 0x000001a4                left
- .text.right    0x000001ae        0xa ./main.o
-                0x000001ae                right
+ .text.right    0x000001b2        0xe ./main.o
+                0x000001b2                right
  .text.controlMotors
-                0x000001b8       0x86 ./main.o
-                0x000001b8                controlMotors
+                0x000001c0      0x104 ./main.o
+                0x000001c0                controlMotors
  .text.startup.main
-                0x0000023e       0x20 ./main.o
-                0x0000023e                main
+                0x000002c4       0x20 ./main.o
+                0x000002c4                main
  .text.libgcc.mul
-                0x0000025e        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+                0x000002e4        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
  .text.libgcc.div
-                0x0000025e        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
- .text.libgcc   0x0000025e        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+                0x000002e4        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+ .text.libgcc   0x000002e4        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
  .text.libgcc.prologue
-                0x0000025e        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+                0x000002e4        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
  .text.libgcc.builtins
-                0x0000025e        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+                0x000002e4        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
  .text.libgcc.fmul
-                0x0000025e        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+                0x000002e4        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
  .text.libgcc.fixed
-                0x0000025e        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
-                0x0000025e                . = ALIGN (0x2)
+                0x000002e4        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+                0x000002e4                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000025e        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
-                0x0000025e                _exit
-                0x0000025e                exit
+ .fini9         0x000002e4        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+                0x000002e4                _exit
+                0x000002e4                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -269,11 +269,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000025e        0x4 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+ .fini0         0x000002e4        0x4 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000262                _etext = .
+                0x000002e8                _etext = .
 
-.data           0x00800100        0x0 load address 0x00000262
+.data           0x00800100        0x0 load address 0x000002e8
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4/crtatmega88p.o
@@ -296,8 +296,8 @@ END GROUP
  *(.bss*)
  *(COMMON)
                 0x00800100                PROVIDE (__bss_end, .)
-                0x00000262                __data_load_start = LOADADDR (.data)
-                0x00000262                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000002e8                __data_load_start = LOADADDR (.data)
+                0x000002e8                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800100        0x0
                 0x00800100                PROVIDE (__noinit_start, .)

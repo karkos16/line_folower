@@ -3,19 +3,19 @@ dioda_blink.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00000262  00000000  00000000  00000054  2**1
+  0 .text         000002e8  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .comment      00000030  00000000  00000000  000002b6  2**0
+  1 .comment      00000030  00000000  00000000  0000033c  2**0
                   CONTENTS, READONLY
-  2 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000002e8  2**2
+  2 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  0000036c  2**2
                   CONTENTS, READONLY
-  3 .debug_info   000005f4  00000000  00000000  00000324  2**0
+  3 .debug_info   000005f4  00000000  00000000  000003a8  2**0
                   CONTENTS, READONLY, DEBUGGING
-  4 .debug_abbrev 000005a2  00000000  00000000  00000918  2**0
+  4 .debug_abbrev 000005a2  00000000  00000000  0000099c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_line   0000001a  00000000  00000000  00000eba  2**0
+  5 .debug_line   0000001a  00000000  00000000  00000f3e  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_str    00000208  00000000  00000000  00000ed4  2**0
+  6 .debug_str    00000208  00000000  00000000  00000f58  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -55,8 +55,8 @@ Disassembly of section .text:
   3a:	d4 e0       	ldi	r29, 0x04	; 4
   3c:	de bf       	out	0x3e, r29	; 62
   3e:	cd bf       	out	0x3d, r28	; 61
-  40:	fe d0       	rcall	.+508    	; 0x23e <main>
-  42:	0d c1       	rjmp	.+538    	; 0x25e <_exit>
+  40:	41 d1       	rcall	.+642    	; 0x2c4 <main>
+  42:	50 c1       	rjmp	.+672    	; 0x2e4 <_exit>
 
 00000044 <__bad_interrupt>:
   44:	dd cf       	rjmp	.-70     	; 0x0 <__vectors>
@@ -211,7 +211,7 @@ Disassembly of section .text:
 
 00000196 <forward>:
  196:	8b b1       	in	r24, 0x0b	; 11
- 198:	8f 76       	andi	r24, 0x6F	; 111
+ 198:	8f 70       	andi	r24, 0x0F	; 15
  19a:	8b b9       	out	0x0b, r24	; 11
  19c:	8b b1       	in	r24, 0x0b	; 11
  19e:	80 66       	ori	r24, 0x60	; 96
@@ -219,96 +219,153 @@ Disassembly of section .text:
  1a2:	08 95       	ret
 
 000001a4 <left>:
- 1a4:	5d 98       	cbi	0x0b, 5	; 11
- 1a6:	8b b1       	in	r24, 0x0b	; 11
- 1a8:	80 65       	ori	r24, 0x50	; 80
- 1aa:	8b b9       	out	0x0b, r24	; 11
- 1ac:	08 95       	ret
+ 1a4:	8b b1       	in	r24, 0x0b	; 11
+ 1a6:	8f 70       	andi	r24, 0x0F	; 15
+ 1a8:	8b b9       	out	0x0b, r24	; 11
+ 1aa:	8b b1       	in	r24, 0x0b	; 11
+ 1ac:	80 65       	ori	r24, 0x50	; 80
+ 1ae:	8b b9       	out	0x0b, r24	; 11
+ 1b0:	08 95       	ret
 
-000001ae <right>:
- 1ae:	5e 98       	cbi	0x0b, 6	; 11
- 1b0:	8b b1       	in	r24, 0x0b	; 11
- 1b2:	80 6a       	ori	r24, 0xA0	; 160
- 1b4:	8b b9       	out	0x0b, r24	; 11
- 1b6:	08 95       	ret
+000001b2 <right>:
+ 1b2:	8b b1       	in	r24, 0x0b	; 11
+ 1b4:	8f 70       	andi	r24, 0x0F	; 15
+ 1b6:	8b b9       	out	0x0b, r24	; 11
+ 1b8:	8b b1       	in	r24, 0x0b	; 11
+ 1ba:	80 6a       	ori	r24, 0xA0	; 160
+ 1bc:	8b b9       	out	0x0b, r24	; 11
+ 1be:	08 95       	ret
 
-000001b8 <controlMotors>:
- 1b8:	8f 30       	cpi	r24, 0x0F	; 15
- 1ba:	41 f4       	brne	.+16     	; 0x1cc <controlMotors+0x14>
- 1bc:	ec df       	rcall	.-40     	; 0x196 <forward>
- 1be:	8f ef       	ldi	r24, 0xFF	; 255
- 1c0:	90 e0       	ldi	r25, 0x00	; 0
- 1c2:	90 93 89 00 	sts	0x0089, r25
- 1c6:	80 93 88 00 	sts	0x0088, r24
- 1ca:	23 c0       	rjmp	.+70     	; 0x212 <controlMotors+0x5a>
- 1cc:	8e 30       	cpi	r24, 0x0E	; 14
- 1ce:	11 f0       	breq	.+4      	; 0x1d4 <controlMotors+0x1c>
- 1d0:	8c 30       	cpi	r24, 0x0C	; 12
- 1d2:	11 f4       	brne	.+4      	; 0x1d8 <controlMotors+0x20>
- 1d4:	ec df       	rcall	.-40     	; 0x1ae <right>
- 1d6:	03 c0       	rjmp	.+6      	; 0x1de <controlMotors+0x26>
- 1d8:	8d 30       	cpi	r24, 0x0D	; 13
- 1da:	51 f4       	brne	.+20     	; 0x1f0 <controlMotors+0x38>
- 1dc:	dc df       	rcall	.-72     	; 0x196 <forward>
- 1de:	80 e8       	ldi	r24, 0x80	; 128
+000001c0 <controlMotors>:
+ 1c0:	8f 30       	cpi	r24, 0x0F	; 15
+ 1c2:	51 f4       	brne	.+20     	; 0x1d8 <controlMotors+0x18>
+ 1c4:	e8 df       	rcall	.-48     	; 0x196 <forward>
+ 1c6:	88 e7       	ldi	r24, 0x78	; 120
+ 1c8:	90 e0       	ldi	r25, 0x00	; 0
+ 1ca:	90 93 89 00 	sts	0x0089, r25
+ 1ce:	80 93 88 00 	sts	0x0088, r24
+ 1d2:	88 e8       	ldi	r24, 0x88	; 136
+ 1d4:	90 e0       	ldi	r25, 0x00	; 0
+ 1d6:	58 c0       	rjmp	.+176    	; 0x288 <controlMotors+0xc8>
+ 1d8:	8e 30       	cpi	r24, 0x0E	; 14
+ 1da:	51 f4       	brne	.+20     	; 0x1f0 <controlMotors+0x30>
+ 1dc:	ea df       	rcall	.-44     	; 0x1b2 <right>
+ 1de:	81 e9       	ldi	r24, 0x91	; 145
  1e0:	90 e0       	ldi	r25, 0x00	; 0
  1e2:	90 93 89 00 	sts	0x0089, r25
  1e6:	80 93 88 00 	sts	0x0088, r24
- 1ea:	8f ef       	ldi	r24, 0xFF	; 255
+ 1ea:	81 eb       	ldi	r24, 0xB1	; 177
  1ec:	90 e0       	ldi	r25, 0x00	; 0
- 1ee:	11 c0       	rjmp	.+34     	; 0x212 <controlMotors+0x5a>
- 1f0:	87 30       	cpi	r24, 0x07	; 7
- 1f2:	11 f0       	breq	.+4      	; 0x1f8 <controlMotors+0x40>
- 1f4:	83 30       	cpi	r24, 0x03	; 3
- 1f6:	11 f4       	brne	.+4      	; 0x1fc <controlMotors+0x44>
- 1f8:	d5 df       	rcall	.-86     	; 0x1a4 <left>
- 1fa:	03 c0       	rjmp	.+6      	; 0x202 <controlMotors+0x4a>
- 1fc:	8b 30       	cpi	r24, 0x0B	; 11
- 1fe:	71 f4       	brne	.+28     	; 0x21c <controlMotors+0x64>
- 200:	ca df       	rcall	.-108    	; 0x196 <forward>
- 202:	8f ef       	ldi	r24, 0xFF	; 255
- 204:	90 e0       	ldi	r25, 0x00	; 0
- 206:	90 93 89 00 	sts	0x0089, r25
- 20a:	80 93 88 00 	sts	0x0088, r24
- 20e:	80 e8       	ldi	r24, 0x80	; 128
- 210:	90 e0       	ldi	r25, 0x00	; 0
- 212:	90 93 8b 00 	sts	0x008B, r25
- 216:	80 93 8a 00 	sts	0x008A, r24
- 21a:	0e c0       	rjmp	.+28     	; 0x238 <controlMotors+0x80>
- 21c:	81 11       	cpse	r24, r1
- 21e:	0c c0       	rjmp	.+24     	; 0x238 <controlMotors+0x80>
- 220:	ba df       	rcall	.-140    	; 0x196 <forward>
- 222:	10 92 89 00 	sts	0x0089, r1
- 226:	10 92 88 00 	sts	0x0088, r1
- 22a:	10 92 8b 00 	sts	0x008B, r1
- 22e:	10 92 8a 00 	sts	0x008A, r1
- 232:	81 e0       	ldi	r24, 0x01	; 1
- 234:	90 e0       	ldi	r25, 0x00	; 0
- 236:	08 95       	ret
- 238:	80 e0       	ldi	r24, 0x00	; 0
- 23a:	90 e0       	ldi	r25, 0x00	; 0
- 23c:	08 95       	ret
+ 1ee:	25 c0       	rjmp	.+74     	; 0x23a <controlMotors+0x7a>
+ 1f0:	98 2f       	mov	r25, r24
+ 1f2:	9b 7f       	andi	r25, 0xFB	; 251
+ 1f4:	98 30       	cpi	r25, 0x08	; 8
+ 1f6:	51 f4       	brne	.+20     	; 0x20c <controlMotors+0x4c>
+ 1f8:	dc df       	rcall	.-72     	; 0x1b2 <right>
+ 1fa:	86 e9       	ldi	r24, 0x96	; 150
+ 1fc:	90 e0       	ldi	r25, 0x00	; 0
+ 1fe:	90 93 89 00 	sts	0x0089, r25
+ 202:	80 93 88 00 	sts	0x0088, r24
+ 206:	81 eb       	ldi	r24, 0xB1	; 177
+ 208:	90 e0       	ldi	r25, 0x00	; 0
+ 20a:	3e c0       	rjmp	.+124    	; 0x288 <controlMotors+0xc8>
+ 20c:	8d 30       	cpi	r24, 0x0D	; 13
+ 20e:	51 f4       	brne	.+20     	; 0x224 <controlMotors+0x64>
+ 210:	c2 df       	rcall	.-124    	; 0x196 <forward>
+ 212:	83 e7       	ldi	r24, 0x73	; 115
+ 214:	90 e0       	ldi	r25, 0x00	; 0
+ 216:	90 93 89 00 	sts	0x0089, r25
+ 21a:	80 93 88 00 	sts	0x0088, r24
+ 21e:	81 e9       	ldi	r24, 0x91	; 145
+ 220:	90 e0       	ldi	r25, 0x00	; 0
+ 222:	32 c0       	rjmp	.+100    	; 0x288 <controlMotors+0xc8>
+ 224:	87 30       	cpi	r24, 0x07	; 7
+ 226:	b9 f4       	brne	.+46     	; 0x256 <controlMotors+0x96>
+ 228:	bd df       	rcall	.-134    	; 0x1a4 <left>
+ 22a:	81 eb       	ldi	r24, 0xB1	; 177
+ 22c:	90 e0       	ldi	r25, 0x00	; 0
+ 22e:	90 93 89 00 	sts	0x0089, r25
+ 232:	80 93 88 00 	sts	0x0088, r24
+ 236:	81 e9       	ldi	r24, 0x91	; 145
+ 238:	90 e0       	ldi	r25, 0x00	; 0
+ 23a:	90 93 8b 00 	sts	0x008B, r25
+ 23e:	80 93 8a 00 	sts	0x008A, r24
+ 242:	2f ef       	ldi	r18, 0xFF	; 255
+ 244:	89 ef       	ldi	r24, 0xF9	; 249
+ 246:	90 e0       	ldi	r25, 0x00	; 0
+ 248:	21 50       	subi	r18, 0x01	; 1
+ 24a:	80 40       	sbci	r24, 0x00	; 0
+ 24c:	90 40       	sbci	r25, 0x00	; 0
+ 24e:	e1 f7       	brne	.-8      	; 0x248 <controlMotors+0x88>
+ 250:	00 c0       	rjmp	.+0      	; 0x252 <controlMotors+0x92>
+ 252:	00 00       	nop
+ 254:	34 c0       	rjmp	.+104    	; 0x2be <controlMotors+0xfe>
+ 256:	98 2f       	mov	r25, r24
+ 258:	9d 7f       	andi	r25, 0xFD	; 253
+ 25a:	91 30       	cpi	r25, 0x01	; 1
+ 25c:	51 f4       	brne	.+20     	; 0x272 <controlMotors+0xb2>
+ 25e:	a2 df       	rcall	.-188    	; 0x1a4 <left>
+ 260:	81 eb       	ldi	r24, 0xB1	; 177
+ 262:	90 e0       	ldi	r25, 0x00	; 0
+ 264:	90 93 89 00 	sts	0x0089, r25
+ 268:	80 93 88 00 	sts	0x0088, r24
+ 26c:	85 ea       	ldi	r24, 0xA5	; 165
+ 26e:	90 e0       	ldi	r25, 0x00	; 0
+ 270:	0b c0       	rjmp	.+22     	; 0x288 <controlMotors+0xc8>
+ 272:	8b 30       	cpi	r24, 0x0B	; 11
+ 274:	71 f4       	brne	.+28     	; 0x292 <controlMotors+0xd2>
+ 276:	8f df       	rcall	.-226    	; 0x196 <forward>
+ 278:	81 e9       	ldi	r24, 0x91	; 145
+ 27a:	90 e0       	ldi	r25, 0x00	; 0
+ 27c:	90 93 89 00 	sts	0x0089, r25
+ 280:	80 93 88 00 	sts	0x0088, r24
+ 284:	83 e7       	ldi	r24, 0x73	; 115
+ 286:	90 e0       	ldi	r25, 0x00	; 0
+ 288:	90 93 8b 00 	sts	0x008B, r25
+ 28c:	80 93 8a 00 	sts	0x008A, r24
+ 290:	16 c0       	rjmp	.+44     	; 0x2be <controlMotors+0xfe>
+ 292:	81 11       	cpse	r24, r1
+ 294:	14 c0       	rjmp	.+40     	; 0x2be <controlMotors+0xfe>
+ 296:	10 92 89 00 	sts	0x0089, r1
+ 29a:	10 92 88 00 	sts	0x0088, r1
+ 29e:	10 92 8b 00 	sts	0x008B, r1
+ 2a2:	10 92 8a 00 	sts	0x008A, r1
+ 2a6:	2f ef       	ldi	r18, 0xFF	; 255
+ 2a8:	89 e6       	ldi	r24, 0x69	; 105
+ 2aa:	98 e1       	ldi	r25, 0x18	; 24
+ 2ac:	21 50       	subi	r18, 0x01	; 1
+ 2ae:	80 40       	sbci	r24, 0x00	; 0
+ 2b0:	90 40       	sbci	r25, 0x00	; 0
+ 2b2:	e1 f7       	brne	.-8      	; 0x2ac <controlMotors+0xec>
+ 2b4:	00 c0       	rjmp	.+0      	; 0x2b6 <controlMotors+0xf6>
+ 2b6:	00 00       	nop
+ 2b8:	81 e0       	ldi	r24, 0x01	; 1
+ 2ba:	90 e0       	ldi	r25, 0x00	; 0
+ 2bc:	08 95       	ret
+ 2be:	80 e0       	ldi	r24, 0x00	; 0
+ 2c0:	90 e0       	ldi	r25, 0x00	; 0
+ 2c2:	08 95       	ret
 
-0000023e <main>:
- 23e:	96 df       	rcall	.-212    	; 0x16c <setupPWMandMOTORS>
- 240:	02 df       	rcall	.-508    	; 0x46 <setupSensors>
- 242:	81 df       	rcall	.-254    	; 0x146 <readSensors>
- 244:	8f 30       	cpi	r24, 0x0F	; 15
- 246:	11 f0       	breq	.+4      	; 0x24c <main+0xe>
- 248:	58 98       	cbi	0x0b, 0	; 11
- 24a:	01 c0       	rjmp	.+2      	; 0x24e <main+0x10>
- 24c:	58 9a       	sbi	0x0b, 0	; 11
- 24e:	b4 df       	rcall	.-152    	; 0x1b8 <controlMotors>
- 250:	8f eb       	ldi	r24, 0xBF	; 191
- 252:	9d e5       	ldi	r25, 0x5D	; 93
- 254:	01 97       	sbiw	r24, 0x01	; 1
- 256:	f1 f7       	brne	.-4      	; 0x254 <main+0x16>
- 258:	00 c0       	rjmp	.+0      	; 0x25a <main+0x1c>
- 25a:	00 00       	nop
- 25c:	f2 cf       	rjmp	.-28     	; 0x242 <main+0x4>
+000002c4 <main>:
+ 2c4:	53 df       	rcall	.-346    	; 0x16c <setupPWMandMOTORS>
+ 2c6:	bf de       	rcall	.-642    	; 0x46 <setupSensors>
+ 2c8:	3e df       	rcall	.-388    	; 0x146 <readSensors>
+ 2ca:	8f 30       	cpi	r24, 0x0F	; 15
+ 2cc:	11 f0       	breq	.+4      	; 0x2d2 <main+0xe>
+ 2ce:	58 98       	cbi	0x0b, 0	; 11
+ 2d0:	01 c0       	rjmp	.+2      	; 0x2d4 <main+0x10>
+ 2d2:	58 9a       	sbi	0x0b, 0	; 11
+ 2d4:	75 df       	rcall	.-278    	; 0x1c0 <controlMotors>
+ 2d6:	8f eb       	ldi	r24, 0xBF	; 191
+ 2d8:	9d e5       	ldi	r25, 0x5D	; 93
+ 2da:	01 97       	sbiw	r24, 0x01	; 1
+ 2dc:	f1 f7       	brne	.-4      	; 0x2da <main+0x16>
+ 2de:	00 c0       	rjmp	.+0      	; 0x2e0 <main+0x1c>
+ 2e0:	00 00       	nop
+ 2e2:	f2 cf       	rjmp	.-28     	; 0x2c8 <main+0x4>
 
-0000025e <_exit>:
- 25e:	f8 94       	cli
+000002e4 <_exit>:
+ 2e4:	f8 94       	cli
 
-00000260 <__stop_program>:
- 260:	ff cf       	rjmp	.-2      	; 0x260 <__stop_program>
+000002e6 <__stop_program>:
+ 2e6:	ff cf       	rjmp	.-2      	; 0x2e6 <__stop_program>

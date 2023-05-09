@@ -126,7 +126,9 @@ void setupPWMandMOTORS() {
 void forward() {
 	PORTD &= ~(
 			(1 << LEFT_MOTOR_BACKWARD) |
-			(1 << RIGHT_MOTOR_BACKWARD)
+			(1 << RIGHT_MOTOR_BACKWARD) |
+			(1 << LEFT_MOTOR_FORWARD) |
+			(1 << RIGHT_MOTOR_FORWARD)
 			);
 	PORTD |= (
 			(1 << LEFT_MOTOR_FORWARD) |
@@ -135,7 +137,12 @@ void forward() {
 }
 
 void left() {
-	PORTD &= ~(1 << LEFT_MOTOR_FORWARD);
+	PORTD &= ~(
+				(1 << LEFT_MOTOR_BACKWARD) |
+				(1 << RIGHT_MOTOR_BACKWARD) |
+				(1 << LEFT_MOTOR_FORWARD) |
+				(1 << RIGHT_MOTOR_FORWARD)
+				);
 	PORTD |= (
 			(1 << LEFT_MOTOR_BACKWARD) |
 			(1 << RIGHT_MOTOR_FORWARD)
@@ -143,7 +150,12 @@ void left() {
 }
 
 void right() {
-	PORTD &= ~(1 << RIGHT_MOTOR_FORWARD);
+	PORTD &= ~(
+				(1 << LEFT_MOTOR_BACKWARD) |
+				(1 << RIGHT_MOTOR_BACKWARD) |
+				(1 << LEFT_MOTOR_FORWARD) |
+				(1 << RIGHT_MOTOR_FORWARD)
+				);
 	PORTD |= (
 			(1 << LEFT_MOTOR_FORWARD) |
 			(1 << RIGHT_MOTOR_BACKWARD)
@@ -152,58 +164,56 @@ void right() {
 
 
 int controlMotors(uint8_t sensorsBits) {
-	unsigned char pelnaPIZDA = 255;
-	unsigned char sredniaPIZDA = 128;
-	unsigned char malaPIZDA = 64;
-	unsigned char stopPIZDA = 0;
+	unsigned char STOP = 0;
 
 //  No black - full speed
 	if (sensorsBits == 0b1111) {
 		forward();
-		RIGHT_MOTOR_SPEED = pelnaPIZDA;
-		LEFT_MOTOR_SPEED = pelnaPIZDA;
+		RIGHT_MOTOR_SPEED = 120;
+		LEFT_MOTOR_SPEED = 136;
 	}
-//	Black on right edge sensor - right motor 1/4 of max speed
+//	Black on right edge sensor - right motor
 	else if (sensorsBits == 0b1110) {
 		right();
-		RIGHT_MOTOR_SPEED = sredniaPIZDA;
-		LEFT_MOTOR_SPEED = pelnaPIZDA;
+		RIGHT_MOTOR_SPEED = (160 - 15);
+		LEFT_MOTOR_SPEED = (192 - 15);
+		_delay_ms(20);
 	}
-	else if (sensorsBits == 0b1100) {
+	else if (sensorsBits == 0b1100 || sensorsBits == 0b1000) {
 		right();
-		RIGHT_MOTOR_SPEED = sredniaPIZDA;
-		LEFT_MOTOR_SPEED = pelnaPIZDA;
+		RIGHT_MOTOR_SPEED = (165 - 15);
+		LEFT_MOTOR_SPEED = (192 - 15);
 	}
-//	Black on middle right sensor - right motor 1/2 of max speed
+//	Black on middle right sensor
 	else if (sensorsBits == 0b1101) {
 		forward();
-		RIGHT_MOTOR_SPEED = sredniaPIZDA;
-		LEFT_MOTOR_SPEED = pelnaPIZDA;
+		RIGHT_MOTOR_SPEED = (130 - 15);
+		LEFT_MOTOR_SPEED = (160 - 15);
 	}
-//	Black on left edge sensor - left motor 1/4 of max speed
+//	Black on left edge sensor
 	else if (sensorsBits == 0b0111) {
 		left();
-		RIGHT_MOTOR_SPEED = pelnaPIZDA;
-		LEFT_MOTOR_SPEED = sredniaPIZDA;
+		RIGHT_MOTOR_SPEED = (192 - 15);
+		LEFT_MOTOR_SPEED = (160 - 15);
+		_delay_ms(20);
 	}
-	else if (sensorsBits == 0b0011) {
+	else if (sensorsBits == 0b0011 || sensorsBits == 0b0001) {
 		left();
-		RIGHT_MOTOR_SPEED = pelnaPIZDA;
-		LEFT_MOTOR_SPEED = sredniaPIZDA;
+		RIGHT_MOTOR_SPEED = (192 - 15);
+		LEFT_MOTOR_SPEED = 165;
 	}
-//	Black in left sensor - left motor 1/2 of max speed
+//	Black in left sensor
 	else if (sensorsBits == 0b1011) {
 		forward();
-		RIGHT_MOTOR_SPEED = pelnaPIZDA;
-		LEFT_MOTOR_SPEED = sredniaPIZDA;
+		RIGHT_MOTOR_SPEED = (160 - 15);
+		LEFT_MOTOR_SPEED = (130 - 15);
 	}
 //	Black on all sensors - STOP
 	else if (sensorsBits == 0b0000) {
-		forward();
-		RIGHT_MOTOR_SPEED = stopPIZDA;
-		LEFT_MOTOR_SPEED = stopPIZDA;
+		RIGHT_MOTOR_SPEED = STOP;
+		LEFT_MOTOR_SPEED = STOP;
+		_delay_ms(500);
 		return 1;
-		//sprawdzenie czy to nie skrzyżowanie
 
 	}
 	return 0;
