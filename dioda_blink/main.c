@@ -5,11 +5,6 @@
 #include <util/delay.h>
 #include <stdbool.h>
 
-#define SENSOR1 PC1
-#define SENSOR2 PC0
-#define SENSOR3 PC2
-#define SENSOR4 PC3
-
 #define LED PD0
 #define LEFT_MOTOR_FORWARD PD5
 #define LEFT_MOTOR_BACKWARD PD4
@@ -17,7 +12,6 @@
 #define RIGHT_MOTOR_SPEED OCR1A
 #define RIGHT_MOTOR_FORWARD PD6
 #define RIGHT_MOTOR_BACKWARD PD7
-// Checking sensors, 1 means that sensor didn't detect black
 
 void setupSensors() {
 	ADCSRA |= (
@@ -125,39 +119,39 @@ void setupPWMandMOTORS() {
 
 void forward() {
 	PORTD &= ~(
-			(1 << LEFT_MOTOR_BACKWARD) |
+			(1 << LEFT_MOTOR_BACKWARD)  |
 			(1 << RIGHT_MOTOR_BACKWARD) |
-			(1 << LEFT_MOTOR_FORWARD) |
+			(1 << LEFT_MOTOR_FORWARD)   |
 			(1 << RIGHT_MOTOR_FORWARD)
 			);
 	PORTD |= (
-			(1 << LEFT_MOTOR_FORWARD) |
+			(1 << LEFT_MOTOR_FORWARD)   |
 			(1 << RIGHT_MOTOR_FORWARD)
 			);
 }
 
 void left() {
 	PORTD &= ~(
-				(1 << LEFT_MOTOR_BACKWARD) |
-				(1 << RIGHT_MOTOR_BACKWARD) |
-				(1 << LEFT_MOTOR_FORWARD) |
-				(1 << RIGHT_MOTOR_FORWARD)
-				);
+			(1 << LEFT_MOTOR_BACKWARD)  |
+			(1 << RIGHT_MOTOR_BACKWARD) |
+			(1 << LEFT_MOTOR_FORWARD)   |
+			(1 << RIGHT_MOTOR_FORWARD)
+			);
 	PORTD |= (
-			(1 << LEFT_MOTOR_BACKWARD) |
+			(1 << LEFT_MOTOR_BACKWARD)  |
 			(1 << RIGHT_MOTOR_FORWARD)
 			);
 }
 
 void right() {
 	PORTD &= ~(
-				(1 << LEFT_MOTOR_BACKWARD) |
-				(1 << RIGHT_MOTOR_BACKWARD) |
-				(1 << LEFT_MOTOR_FORWARD) |
-				(1 << RIGHT_MOTOR_FORWARD)
-				);
+			(1 << LEFT_MOTOR_BACKWARD)  |
+			(1 << RIGHT_MOTOR_BACKWARD) |
+			(1 << LEFT_MOTOR_FORWARD)   |
+			(1 << RIGHT_MOTOR_FORWARD)
+			);
 	PORTD |= (
-			(1 << LEFT_MOTOR_FORWARD) |
+			(1 << LEFT_MOTOR_FORWARD)   |
 			(1 << RIGHT_MOTOR_BACKWARD)
 			);
 }
@@ -166,13 +160,11 @@ void right() {
 int controlMotors(uint8_t sensorsBits) {
 	unsigned char STOP = 0;
 
-//  No black - full speed
 	if (sensorsBits == 0b1111) {
 		forward();
 		RIGHT_MOTOR_SPEED = 120;
 		LEFT_MOTOR_SPEED = 136;
 	}
-//	Black on right edge sensor - right motor
 	else if (sensorsBits == 0b1110) {
 		right();
 		RIGHT_MOTOR_SPEED = (160 - 15);
@@ -190,7 +182,6 @@ int controlMotors(uint8_t sensorsBits) {
 		RIGHT_MOTOR_SPEED = (130 - 15);
 		LEFT_MOTOR_SPEED = (160 - 15);
 	}
-//	Black on left edge sensor
 	else if (sensorsBits == 0b0111) {
 		left();
 		RIGHT_MOTOR_SPEED = (192 - 15);
@@ -202,13 +193,11 @@ int controlMotors(uint8_t sensorsBits) {
 		RIGHT_MOTOR_SPEED = (192 - 15);
 		LEFT_MOTOR_SPEED = 165;
 	}
-//	Black in left sensor
 	else if (sensorsBits == 0b1011) {
 		forward();
 		RIGHT_MOTOR_SPEED = (160 - 15);
 		LEFT_MOTOR_SPEED = (130 - 15);
 	}
-//	Black on all sensors - STOP
 	else if (sensorsBits == 0b0000) {
 		RIGHT_MOTOR_SPEED = STOP;
 		LEFT_MOTOR_SPEED = STOP;
@@ -230,10 +219,9 @@ int main(void)
 	{
 	   uint8_t sensors = readSensors();
 
-//	   Turn on led if black wasn't detected
 	  if (sensors != 0b1111) {
-		  PORTD &= ~(1 << PD0);
-	  } else PORTD |= (1 << PD0);
+		  PORTD &= ~(1 << LED);
+	  } else PORTD |= (1 << LED);
 
 	   controlMotors(sensors);
 	   _delay_ms(6);
