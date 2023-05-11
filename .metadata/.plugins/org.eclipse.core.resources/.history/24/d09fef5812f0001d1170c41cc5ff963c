@@ -176,6 +176,7 @@ int controlMotors(uint8_t sensorsBits) {
 		RIGHT_MOTOR_SPEED = (165 - 15);
 		LEFT_MOTOR_SPEED = (192 - 15);
 	}
+//	Black on middle right sensor
 	else if (sensorsBits == 0b1101) {
 		forward();
 		RIGHT_MOTOR_SPEED = (130 - 15);
@@ -213,7 +214,7 @@ int controlMotors(uint8_t sensorsBits) {
 #define targetPossition 0
 #define LeftMotorSpeed 136
 #define RightMotorSpeed LeftMotorSpeed - 16 
-float lastError = 0;
+float lastError;
 
 void controlMotorsPID(uint8_t sensorsBits) {
 	forward();
@@ -246,7 +247,7 @@ void controlMotorsPID(uint8_t sensorsBits) {
 	else LEFT_MOTOR_SPEED = LeftMotorSpeed + change;
 	if (RightMotorSpeed - change > 255) RIGHT_MOTOR_SPEED = 255;
 	else if (RightMotorSpeed - change < 0) RIGHT_MOTOR_SPEED = 0;
-	else RIGHT_MOTOR_SPEED = RightMotorSpeed - change;
+	else RIGHT_MOTOR_SPEED = RightMotorSpeed + change;
 }
 
 

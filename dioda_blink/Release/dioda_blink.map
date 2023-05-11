@@ -2,6 +2,42 @@ Archive member included because of file (symbol)
 
 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
                               c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4/crtatmega88p.o (exit)
+c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_clear_bss.o)
+                              ./main.o (__do_clear_bss)
+c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(addsf3.o)
+                              ./main.o (__subsf3)
+c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(addsf3x.o)
+                              c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(addsf3.o) (__addsf3x)
+c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(cmpsf2.o)
+                              ./main.o (__nesf2)
+c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(divsf3.o)
+                              ./main.o (__divsf3)
+c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(divsf3x.o)
+                              c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(divsf3.o) (__divsf3x)
+c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fixunssfsi.o)
+                              ./main.o (__fixunssfsi)
+c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_cmp.o)
+                              c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(cmpsf2.o) (__fp_cmp)
+c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_inf.o)
+                              c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(addsf3x.o) (__fp_inf)
+c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_nan.o)
+                              c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(addsf3x.o) (__fp_nan)
+c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_pscA.o)
+                              c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(addsf3x.o) (__fp_pscA)
+c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_pscB.o)
+                              c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(addsf3x.o) (__fp_pscB)
+c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_round.o)
+                              c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(addsf3.o) (__fp_round)
+c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_split3.o)
+                              c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(addsf3x.o) (__fp_split3)
+c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_zero.o)
+                              c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(addsf3x.o) (__fp_zero)
+c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(gesf2.o)
+                              ./main.o (__gtsf2)
+c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(mulsf3.o)
+                              ./main.o (__mulsf3)
+c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(mulsf3x.o)
+                              c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(mulsf3.o) (__mulsf3x)
 
 Memory Configuration
 
@@ -117,7 +153,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x2e8
+.text           0x00000000      0x896
  *(.vectors)
  .vectors       0x00000000       0x34 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4/crtatmega88p.o
                 0x00000000                __vector_default
@@ -156,6 +192,8 @@ END GROUP
  *(.init3)
  *(.init3)
  *(.init4)
+ .init4         0x00000040       0x10 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_clear_bss.o)
+                0x00000040                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -166,91 +204,186 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x00000040        0x4 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4/crtatmega88p.o
+ .init9         0x00000050        0x4 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4/crtatmega88p.o
  *(.init9)
  *(.text)
- .text          0x00000044        0x2 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4/crtatmega88p.o
-                0x00000044                __vector_22
-                0x00000044                __vector_1
-                0x00000044                __vector_24
-                0x00000044                __vector_12
-                0x00000044                __bad_interrupt
-                0x00000044                __vector_6
-                0x00000044                __vector_3
-                0x00000044                __vector_23
-                0x00000044                __vector_25
-                0x00000044                __vector_11
-                0x00000044                __vector_13
-                0x00000044                __vector_17
-                0x00000044                __vector_19
-                0x00000044                __vector_7
-                0x00000044                __vector_5
-                0x00000044                __vector_4
-                0x00000044                __vector_9
-                0x00000044                __vector_2
-                0x00000044                __vector_21
-                0x00000044                __vector_15
-                0x00000044                __vector_8
-                0x00000044                __vector_14
-                0x00000044                __vector_10
-                0x00000044                __vector_16
-                0x00000044                __vector_18
-                0x00000044                __vector_20
- .text          0x00000046        0x0 ./main.o
- .text          0x00000046        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
-                0x00000046                . = ALIGN (0x2)
+ .text          0x00000054        0x2 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4/crtatmega88p.o
+                0x00000054                __vector_22
+                0x00000054                __vector_1
+                0x00000054                __vector_24
+                0x00000054                __vector_12
+                0x00000054                __bad_interrupt
+                0x00000054                __vector_6
+                0x00000054                __vector_3
+                0x00000054                __vector_23
+                0x00000054                __vector_25
+                0x00000054                __vector_11
+                0x00000054                __vector_13
+                0x00000054                __vector_17
+                0x00000054                __vector_19
+                0x00000054                __vector_7
+                0x00000054                __vector_5
+                0x00000054                __vector_4
+                0x00000054                __vector_9
+                0x00000054                __vector_2
+                0x00000054                __vector_21
+                0x00000054                __vector_15
+                0x00000054                __vector_8
+                0x00000054                __vector_14
+                0x00000054                __vector_10
+                0x00000054                __vector_16
+                0x00000054                __vector_18
+                0x00000054                __vector_20
+ .text          0x00000056        0x0 ./main.o
+ .text          0x00000056        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+ .text          0x00000056        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_clear_bss.o)
+ .text          0x00000056        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(addsf3.o)
+ .text          0x00000056        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(addsf3x.o)
+ .text          0x00000056        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(cmpsf2.o)
+ .text          0x00000056        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(divsf3.o)
+ .text          0x00000056        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(divsf3x.o)
+ .text          0x00000056        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fixunssfsi.o)
+ .text          0x00000056        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_cmp.o)
+ .text          0x00000056        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_inf.o)
+ .text          0x00000056        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_nan.o)
+ .text          0x00000056        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_pscA.o)
+ .text          0x00000056        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_pscB.o)
+ .text          0x00000056        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_round.o)
+ .text          0x00000056        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_split3.o)
+ .text          0x00000056        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_zero.o)
+ .text          0x00000056        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(gesf2.o)
+ .text          0x00000056        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(mulsf3.o)
+ .text          0x00000056        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(mulsf3x.o)
+                0x00000056                . = ALIGN (0x2)
  *(.text.*)
  .text.setupSensors
-                0x00000046       0x22 ./main.o
-                0x00000046                setupSensors
+                0x00000056       0x22 ./main.o
+                0x00000056                setupSensors
  .text.leftEdgeSensor
-                0x00000068       0x3a ./main.o
-                0x00000068                leftEdgeSensor
+                0x00000078       0x3a ./main.o
+                0x00000078                leftEdgeSensor
  .text.leftSensor
-                0x000000a2       0x30 ./main.o
-                0x000000a2                leftSensor
+                0x000000b2       0x30 ./main.o
+                0x000000b2                leftSensor
  .text.rightEdgeSensor
-                0x000000d2       0x3a ./main.o
-                0x000000d2                rightEdgeSensor
+                0x000000e2       0x3a ./main.o
+                0x000000e2                rightEdgeSensor
  .text.rightSensor
-                0x0000010c       0x3a ./main.o
-                0x0000010c                rightSensor
+                0x0000011c       0x3a ./main.o
+                0x0000011c                rightSensor
  .text.readSensors
-                0x00000146       0x26 ./main.o
-                0x00000146                readSensors
+                0x00000156       0x26 ./main.o
+                0x00000156                readSensors
  .text.setupPWMandMOTORS
-                0x0000016c       0x2a ./main.o
-                0x0000016c                setupPWMandMOTORS
- .text.forward  0x00000196        0xe ./main.o
-                0x00000196                forward
- .text.left     0x000001a4        0xe ./main.o
-                0x000001a4                left
- .text.right    0x000001b2        0xe ./main.o
-                0x000001b2                right
+                0x0000017c       0x2a ./main.o
+                0x0000017c                setupPWMandMOTORS
+ .text.forward  0x000001a6        0xe ./main.o
+                0x000001a6                forward
+ .text.left     0x000001b4        0xe ./main.o
+                0x000001b4                left
+ .text.right    0x000001c2        0xe ./main.o
+                0x000001c2                right
  .text.controlMotors
-                0x000001c0      0x104 ./main.o
-                0x000001c0                controlMotors
+                0x000001d0      0x104 ./main.o
+                0x000001d0                controlMotors
+ .text.controlMotorsPID
+                0x000002d4      0x1ec ./main.o
+                0x000002d4                controlMotorsPID
  .text.startup.main
-                0x000002c4       0x20 ./main.o
-                0x000002c4                main
+                0x000004c0       0x20 ./main.o
+                0x000004c0                main
  .text.libgcc.mul
-                0x000002e4        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+                0x000004e0        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
  .text.libgcc.div
-                0x000002e4        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
- .text.libgcc   0x000002e4        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+                0x000004e0        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+ .text.libgcc   0x000004e0        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
  .text.libgcc.prologue
-                0x000002e4        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+                0x000004e0        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
  .text.libgcc.builtins
-                0x000002e4        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+                0x000004e0        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
  .text.libgcc.fmul
-                0x000002e4        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+                0x000004e0        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
  .text.libgcc.fixed
-                0x000002e4        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
-                0x000002e4                . = ALIGN (0x2)
+                0x000004e0        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+ .text.libgcc.mul
+                0x000004e0        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_clear_bss.o)
+ .text.libgcc.div
+                0x000004e0        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x000004e0        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_clear_bss.o)
+ .text.libgcc.prologue
+                0x000004e0        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_clear_bss.o)
+ .text.libgcc.builtins
+                0x000004e0        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_clear_bss.o)
+ .text.libgcc.fmul
+                0x000004e0        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_clear_bss.o)
+ .text.libgcc.fixed
+                0x000004e0        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_clear_bss.o)
+ .text.avr-libc.fplib
+                0x000004e0        0xa c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(addsf3.o)
+                0x000004e0                __subsf3
+                0x000004e2                __addsf3
+ .text.avr-libc.fplib
+                0x000004ea       0xc0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(addsf3x.o)
+                0x00000504                __addsf3x
+ .text.avr-libc.fplib
+                0x000005aa        0x8 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(cmpsf2.o)
+                0x000005aa                __nesf2
+                0x000005aa                __eqsf2
+                0x000005aa                __cmpsf2
+                0x000005aa                __ltsf2
+                0x000005aa                __lesf2
+ .text.avr-libc.fplib
+                0x000005b2        0x4 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(divsf3.o)
+                0x000005b2                __divsf3
+ .text.avr-libc.fplib
+                0x000005b6       0xcc c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(divsf3x.o)
+                0x000005cc                __divsf3x
+                0x000005d0                __divsf3_pse
+ .text.avr-libc.fplib
+                0x00000682       0x58 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fixunssfsi.o)
+                0x00000682                __fixunssfsi
+ .text.avr-libc.fplib
+                0x000006da       0x48 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_cmp.o)
+                0x000006da                __fp_cmp
+ .text.avr-libc.fplib
+                0x00000722        0xc c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_inf.o)
+                0x00000722                __fp_inf
+ .text.avr-libc.fplib
+                0x0000072e        0x6 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_nan.o)
+                0x0000072e                __fp_nan
+ .text.avr-libc.fplib
+                0x00000734        0xe c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_pscA.o)
+                0x00000734                __fp_pscA
+ .text.avr-libc.fplib
+                0x00000742        0xe c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_pscB.o)
+                0x00000742                __fp_pscB
+ .text.avr-libc.fplib
+                0x00000750       0x22 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_round.o)
+                0x00000750                __fp_round
+ .text.avr-libc.fplib
+                0x00000772       0x44 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_split3.o)
+                0x00000772                __fp_split3
+                0x00000782                __fp_splitA
+ .text.avr-libc.fplib
+                0x000007b6        0xe c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_zero.o)
+                0x000007b6                __fp_zero
+                0x000007b8                __fp_szero
+ .text.avr-libc.fplib
+                0x000007c4        0x8 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(gesf2.o)
+                0x000007c4                __gesf2
+                0x000007c4                __gtsf2
+ .text.avr-libc.fplib
+                0x000007cc        0x4 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(mulsf3.o)
+                0x000007cc                __mulsf3
+ .text.avr-libc.fplib
+                0x000007d0       0xc2 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(mulsf3x.o)
+                0x000007e4                __mulsf3x
+                0x000007e8                __mulsf3_pse
+                0x00000892                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000002e4        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
-                0x000002e4                _exit
-                0x000002e4                exit
+ .fini9         0x00000892        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+                0x00000892                _exit
+                0x00000892                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -269,16 +402,34 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000002e4        0x4 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+ .fini0         0x00000892        0x4 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
  *(.fini0)
-                0x000002e8                _etext = .
+                0x00000896                _etext = .
 
-.data           0x00800100        0x0 load address 0x000002e8
+.data           0x00800100        0x0 load address 0x00000896
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4/crtatmega88p.o
  .data          0x00800100        0x0 ./main.o
  .data          0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+ .data          0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_clear_bss.o)
+ .data          0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(addsf3.o)
+ .data          0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(addsf3x.o)
+ .data          0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(cmpsf2.o)
+ .data          0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(divsf3.o)
+ .data          0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(divsf3x.o)
+ .data          0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fixunssfsi.o)
+ .data          0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_cmp.o)
+ .data          0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_inf.o)
+ .data          0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_nan.o)
+ .data          0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_pscA.o)
+ .data          0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_pscB.o)
+ .data          0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_round.o)
+ .data          0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_split3.o)
+ .data          0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_zero.o)
+ .data          0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(gesf2.o)
+ .data          0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(mulsf3.o)
+ .data          0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(mulsf3x.o)
  *(.data*)
  *(.rodata)
  *(.rodata*)
@@ -287,24 +438,45 @@ END GROUP
                 0x00800100                _edata = .
                 0x00800100                PROVIDE (__data_end, .)
 
-.bss            0x00800100        0x0
+.bss            0x00800100        0x4
                 0x00800100                PROVIDE (__bss_start, .)
  *(.bss)
  .bss           0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4/crtatmega88p.o
  .bss           0x00800100        0x0 ./main.o
  .bss           0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+ .bss           0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_clear_bss.o)
+ .bss           0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(addsf3.o)
+ .bss           0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(addsf3x.o)
+ .bss           0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(cmpsf2.o)
+ .bss           0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(divsf3.o)
+ .bss           0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(divsf3x.o)
+ .bss           0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fixunssfsi.o)
+ .bss           0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_cmp.o)
+ .bss           0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_inf.o)
+ .bss           0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_nan.o)
+ .bss           0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_pscA.o)
+ .bss           0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_pscB.o)
+ .bss           0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_round.o)
+ .bss           0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_split3.o)
+ .bss           0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(fp_zero.o)
+ .bss           0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(gesf2.o)
+ .bss           0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(mulsf3.o)
+ .bss           0x00800100        0x0 c:/users/karko/onedrive/dokumenty/mkclipse/avr toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libm.a(mulsf3x.o)
  *(.bss*)
+ .bss.lastError
+                0x00800100        0x4 ./main.o
+                0x00800100                lastError
  *(COMMON)
-                0x00800100                PROVIDE (__bss_end, .)
-                0x000002e8                __data_load_start = LOADADDR (.data)
-                0x000002e8                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00800104                PROVIDE (__bss_end, .)
+                0x00000896                __data_load_start = LOADADDR (.data)
+                0x00000896                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800100        0x0
-                0x00800100                PROVIDE (__noinit_start, .)
+.noinit         0x00800104        0x0
+                0x00800104                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x00800100                PROVIDE (__noinit_end, .)
-                0x00800100                _end = .
-                0x00800100                PROVIDE (__heap_start, .)
+                0x00800104                PROVIDE (__noinit_end, .)
+                0x00800104                _end = .
+                0x00800104                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)

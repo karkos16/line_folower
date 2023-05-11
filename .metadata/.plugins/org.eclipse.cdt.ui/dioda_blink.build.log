@@ -1,4 +1,4 @@
-23:43:57 **** Incremental Build of configuration Release for project dioda_blink ****
+17:42:04 **** Incremental Build of configuration Release for project dioda_blink ****
 make all 
 'Building file: ../main.c'
 'Invoking: AVR Compiler'
@@ -28,15 +28,15 @@ AVR Memory Usage
 ----------------
 Device: atmega88p
 
-Program:     744 bytes (9.1% Full)
+Program:    2198 bytes (26.8% Full)
 (.text + .data + .bootloader)
 
-Data:          0 bytes (0.0% Full)
+Data:          4 bytes (0.4% Full)
 (.data + .bss + .noinit)
 
 
 'Finished building: sizedummy'
 ' '
 
-23:43:59 Build Finished. 0 errors, 0 warnings. (took 1s.169ms)
+17:42:05 Build Finished. 0 errors, 0 warnings. (took 1s.346ms)
 
